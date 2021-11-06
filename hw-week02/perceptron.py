@@ -4,12 +4,12 @@ from preparation import sigmoid, sigmoidprime
 '''
 single layer perceptron
 '''
-class perceptron:
-    # initializer
+class Perceptron:
     def __init__(self, input_units):
         '''
-        input_units: an int specifying how many weights are coming into the perceptron
+        :param input_units: an int specifying how many weights are coming into the perceptron
         '''
+
         self.input_units = input_units
         self.alpha = 1 # learning rate
         self.weights = np.random.randn(input_units)
@@ -17,8 +17,8 @@ class perceptron:
 
     def forward_step(self, inputs):
         '''
-        inputs is a list
         computes the activation of the perceptron based on the given input, using sigmoid as the activation function
+        :param inputs: a list of the inputs to the perceptron
         '''
         self.inputs = inputs
         activation = 0
@@ -30,6 +30,7 @@ class perceptron:
     def update(self, delta):
         '''
         updates the parameters by computing the gradients for weights and bias from the error term δ
+        :param delta: the error signal
         '''
         self.bias -= self.alpha * 1 * delta
         for i, input in enumerate(self.inputs):
