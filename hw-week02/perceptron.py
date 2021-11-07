@@ -32,7 +32,7 @@ class Perceptron:
         updates the parameters by computing the gradients for weights and bias from the error term δ
         :param delta: the error signal
         '''
-        self.bias -= self.alpha * 1 * delta
+        self.bias -= self.alpha * delta
         for i, input in enumerate(self.inputs):
             gradient_weight = delta * input
             self.weights[i] -= self.alpha * gradient_weight
